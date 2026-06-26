@@ -516,14 +516,23 @@ footer {
   </div>
   <div class="reveal" style="transition-delay: 0.15s">
     <div class="form-wrap">
-      <div class="form-row">
-        <input class="field" type="text" placeholder="您的姓名 *">
-        <input class="field" type="tel" placeholder="聯絡電話 *">
-      </div>
-      <input class="field" type="email" placeholder="電子郵件">
-      <input class="field" type="text" placeholder="LINE ID（方便聯繫）">
-      <textarea class="field" placeholder="描述您的需求（材料、尺寸、造型等）"></textarea>
-      <button class="form-submit">送出諮詢</button>
+      <!-- 表單已完美串接您的 Google Apps Script 後端網址 -->
+      <form action="https://script.google.com/macros/s/AKfycbzhhX6uolY3gV1mUy5hX5_mzQ0_uvP9FZiOvH-8irBiBlOeikOlxxw2MAQhJqETv5DxJw/exec" method="POST" style="width: 100%; display: flex; flex-direction: column; gap: 14px;">
+        
+        <div class="form-row">
+          <input class="field" type="text" name="name" placeholder="您的姓名 *" required>
+          <input class="field" type="tel" name="phone" placeholder="聯絡電話 *" required>
+        </div>
+        
+        <input class="field" type="email" name="email" placeholder="電子郵件">
+        
+        <input class="field" type="text" name="line_id" placeholder="LINE ID（方便聯繫）">
+        
+        <textarea class="field" name="requirement" placeholder="描述您的需求（材料、尺寸、造型等）" required></textarea>
+        
+        <button type="submit" class="form-submit">送出諮詢</button>
+        
+      </form>
     </div>
   </div>
 </section>
